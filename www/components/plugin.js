@@ -19,13 +19,13 @@ $(document).on ("click","#camera", function(){
 $(document).on ("click","#codigo", function(){
       cordova.plugins.barcodeScanner.scan(
       function (result) {
-          alert("We got a barcode\n" +
+          alert("Leitura efetuada com sucesso" +
                 "Resultado: " + result.text + "\n" +
                 "Formato: " + result.format + "\n" +
                 "Cancelado: " + result.cancelled);
       },
       function (error) {
-          alert("Scanning failed: " + error);
+          alert("Ocorreu um erro:: " + error);
       },
       {
           preferFrontCamera : false, 
