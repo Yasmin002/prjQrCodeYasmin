@@ -1,5 +1,4 @@
 // This is a JavaScript file
-// This is a JavaScript file
 $(document).on ("click","#camera", function(){
     navigator.camera.getPicture(onSuccess, onFail, { 
     quality: 50,
