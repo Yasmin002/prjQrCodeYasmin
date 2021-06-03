@@ -1,31 +1,13 @@
-// This is a JavaScript file
-$(document).on ("click","#camera", function(){
-    navigator.camera.getPicture(onSuccess, onFail, { 
-    quality: 50,
-    destinationType: Camera.DestinationType.FILE_URI,
-    correctOrientation: true,
-    saveToPhotoAlbum: true
-});
-
- function onSuccess(imageURI) {
-    var image = document.getElementById('imagem');
-    image.src = imageURI;
-  }
-  function onFail(message) {
-    alert('Erro: ' + message);
-  }
-});
-
 $(document).on ("click","#codigo", function(){
       cordova.plugins.barcodeScanner.scan(
       function (result) {
-          alert("Leitura efetuada com sucesso" +
+          alert("Leitura efetuada com sucesso/n" +
                 "Resultado: " + result.text + "\n" +
                 "Formato: " + result.format + "\n" +
                 "Cancelado: " + result.cancelled);
       },
       function (error) {
-          alert("Ocorreu um erro:: " + error);
+          alert("Ocorreu um erro:" + error);
       },
       {
           preferFrontCamera : false, 
@@ -40,5 +22,5 @@ $(document).on ("click","#codigo", function(){
           disableAnimations : true, 
           disableSuccessBeep: false 
       }
-   );
+  );
 });
